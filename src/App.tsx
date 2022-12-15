@@ -1,11 +1,21 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Favourites from './pages/Favourites';
+import Home from './pages/Home';
 
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="font-bold">Hello from react</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="mt-[1.5rem] content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favourites" element={<Favourites />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
